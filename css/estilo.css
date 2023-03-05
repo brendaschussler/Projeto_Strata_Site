@@ -1,0 +1,439 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: gray;
+    line-height: 2;
+}
+
+/*todos links vao ter a mesma transição*/
+a {
+    transition: color .2s linear, border .2s linear;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #787878;
+    font-weight: normal;
+    /*1 em faz a margem pegar de acordo com o tamanho da fonte, nao é fixa*/
+    margin: 1em;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 10px;
+}
+
+p {
+    margin: 0 0 2em;
+    text-align: justify;
+}
+
+/*para imagem se adaptar ao tamanho do browser*/
+img {
+    max-width: 100%;
+}
+
+
+blockquote {
+    border-left: solid 5px #c4bdbd;
+    margin: 2em 0;
+    padding: .5em 0 .5em 1.2em;
+}
+
+code {
+    background-color: #f7f7f7;
+    border-radius: .35em;
+    border: solid 2px #efefef;
+    /*fonte padrao para codigo*/
+    font-family: 'Courier New', Courier, monospace;
+}
+
+pre code {
+    display: block;
+}
+
+ul,
+ol {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+}
+
+.ul-alternate {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ul-alternate li {
+    border-bottom: 1px solid #ccc;
+    padding-left: 0;
+}
+
+/*para so mudar a ultima li da lista*/
+.ul-alternate li:last-child {
+    border-bottom: 0;
+    padding-left: 0;
+}
+
+.ul-icons {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ul-icons li {
+    display: inline-block;
+    /*esses icones inseridos sao fontes, ajusto tamanho como fonte*/
+    font-size: 30px;
+    color: rgb(111, 167, 148);
+    padding: .2em;
+}
+
+.header {
+    /*quero header fixa no canto independente de rolar a pg pra baixo ou n*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 35%;
+    text-align: right;
+    padding: 120px 80px;
+    /*pois padding soma com widht, isso o ignora*/
+    box-sizing: border-box;
+    /*img overlay acrescenta textura sobre a img de fundo bg*/
+    background-image: url(../ProjetoStrataImages/overlay.png), url(../ProjetoStrataImages/bg.jpg);
+    background-position: left top;
+    background-size: auto, cover;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 35%;
+    left: 0;
+    padding: 0 120px 72px 0;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.603);
+    text-align: right;
+    font-size: 12px;
+}
+
+.icons-footer {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.icons-footer a {
+    /*esses icones inseridos sao fontes, ajusto tamanho como fonte*/
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.603);
+    padding: .1em;
+    transition: all .5s ease-in-out;
+}
+
+.icons-footer a:hover {
+    color: white;
+}
+
+.icons-footer li {
+    display: inline-block;
+    padding: .3em;
+}
+
+.header-title {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 23px;
+    font-weight: normal;
+}
+
+.header-title strong {
+    color: white;
+    font-weight: normal;
+}
+
+.header-link2 {
+    color: rgba(255, 255, 255, 0.5);
+    border-bottom: dotted 1px;
+}
+
+.header-link2:hover {
+    /*inherit faz herdar cor do elemento pai*/
+    color: aquamarine;
+    border-bottom-color: transparent;
+}
+
+.img-header,
+.header-link {
+    border-radius: 50%;
+}
+
+.main {
+    /*fica ao lado do header, começa em 35 e ocupa 65 = 100-35*/
+    margin-left: 35%;
+    width: 65%;
+    padding: 60px 120px;
+    /*pois padding soma com widht, isso o ignora*/
+    box-sizing: border-box;
+}
+
+.recentWork-card img {
+    border-radius: 10px;
+}
+
+.gallery-img img {
+    width: 100%;
+    margin-bottom: 2%;
+    border-radius: 5px;
+}
+
+.gallery-thumb img {
+    margin-bottom: 2%;
+    border-radius: 5px;
+}
+
+.row {
+    overflow: auto;
+}
+
+.img-left {
+    float: left;
+    border-radius: 5px;
+    margin: 1em;
+}
+
+.img-right {
+    float: right;
+    border-radius: 5px;
+    margin: 1em;
+}
+
+.col1-2 {
+    width: 66%;
+    float: left;
+}
+
+.col3 {
+    width: 32%;
+    float: left;
+}
+
+/*quero selecionar imagem 1 4 e 7 (primeiras da coluna)
+aplico margem right*/
+.col3:nth-child(3n-2) {
+    margin-right: 2%;
+}
+
+/*quero selecionar imagem 3 6 e 9 (ultimas da coluna)
+aplico margem left*/
+.col3:nth-child(3n) {
+    margin-left: 2%;
+}
+
+/* quero selecionar toda col 1/3 que vem depois de uma col 2/3 
+sinal + seleciona elemento imediatamente apos*/
+.col1-2+.col3 {
+    margin-left: 2%;
+}
+
+.col3+.col1-2 {
+    margin-left: 2%;
+}
+
+.meiaCol {
+    width: 49%;
+    float: left;
+}
+
+.meiaCol:first-child {
+    margin-right: 1%;
+}
+
+.meiaCol:last-child {
+    margin-left: 1%;
+}
+
+input,
+label,
+textarea,
+select {
+    display: inline-block;
+    width: 100%;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+input,
+textarea,
+select {
+    background: #e9e7e7;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    border: none;
+}
+
+/*Pega todos os imputs do tipo Radio*/
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+}
+
+textarea:focus {
+    border: 3px solid #49bf9d;
+    outline: none;
+}
+
+textarea {
+    height: 5em;
+}
+
+.button-default {
+    background-color: #49bf9d;
+    border: 2px solid #49bf9d;
+    color: white;
+    padding: .8em 2em;
+    border-radius: 5px;
+    font-size: .8em;
+    display: inline-block;
+    transition: all .5s ease-in-out;
+}
+
+.button-default:hover {
+    background-color: white;
+    color: #49bf9d;
+}
+
+.button-default-stroke:hover {
+    border-color: #49bf9d;
+}
+
+/*herda button default, so altero o que quero mudar*/
+.button-default-stroke {
+    background-color: white;
+    border-color: #efefef;
+    color: inherit;
+}
+
+.button-default-small {
+    font-size: .6em;
+}
+
+.button-default-full {
+    display: block;
+    text-align: center;
+    margin: .5em;
+
+}
+
+.table {
+    width: 100%;
+    margin: 0 0 2em 0;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table th {
+    background-color: #ccc;
+    padding-left: .75em;
+}
+
+.table td {
+    padding: .75em;
+}
+
+.table tbody tr:first-child td {
+    border-top: solid 2px #666;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: solid 2px #666;
+}
+
+/*so pego o enesimo filho
+tambem posso selecionar por odd:filhos impares ou even:filhos pares */
+.table tbody tr:nth-child(even) td {
+    background-color: #ddd;
+}
+
+.table tbody tr td {
+    border-bottom: 1px solid #ccc;
+}
+
+.table-alternate tbody td,
+.table-alternate tbody tr:last-child td,
+.table-alternate tbody tr:first-child td {
+    border: 1px solid #ddd;
+}
+
+.img-link {
+    border: 0;
+}
+
+.legendaRight {
+    margin-left: 0;
+    margin-right: 120px;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.legendaLeft {
+    margin-left: 0;
+    margin-right: 120px;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.paragRight {
+    font-size: 15px;
+    margin-left: 0;
+    margin-right: 120px;
+    text-align: center;
+}
+
+.paragLeft {
+    font-size: 15px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 120px;
+    text-align: center;
+}
+
+/* utilizei span quando adicionei simbolos para descrever eles para acessibilidade
+mas nao quero que a descrição fique visível na tela 
+    ** nao posso usar display=none ou visibility=hidden pois os leitores de tela ignorariam a descrição tbm*/
+.hidden {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
